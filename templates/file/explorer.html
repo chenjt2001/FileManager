@@ -1,0 +1,42 @@
+<!DOCTYPE html><!-- 定义基本html5格式网页。 -->
+
+<head><!-- 头部标签，一个基本html格式的必须元素。 -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!-- 标签定义页面的基本元素。在html中没有结束标签。 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui"><!-- 标签定义页面的基本元素。在html中没有结束标签。 -->
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate"> 
+	<title>文件浏览器</title><!-- 标题，网页不可缺的一部分。 -->
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css"/><!-- 引入的样式文件 -->
+	<script src="/static/js/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="/static/js/jsTree/themes/default/style.css" />
+	<script src="/static/js/jsTree/jstree.js"></script>
+	<link href="/static/js/video/video-js.min.css" rel="stylesheet">
+	<script src="/static/js/video/video.min.js"></script>
+	<script type="text/javascript">var Server = {path:{{ path|tojson }}};</script>
+</head>
+<body>
+<form method="post">
+
+	<div class="top">
+		路径：<input type="text" name="path" value="{{ path }}" />
+		<input type="submit" value="进入" />
+	</div>
+
+	<div class="center">
+		<div id="file_show"><p>未选择文件</p></div>
+	</div>
+
+	<div class="left">
+		搜索：<input type="search" id="plugins4_q"/>
+		<div id="file_tree"></div>
+	</div>
+
+	<div class="right">
+		<table id="info_table"></table>
+	</div>
+
+	
+</form>
+
+</body>
+<script src="/static/js/explorer.js"></script>
+</html>
